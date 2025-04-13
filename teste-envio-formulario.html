@@ -1,12 +1,31 @@
-<form action="https://formsubmit.co/irisjosiely@gmail.com" method="POST">
-  <input type="text" name="nome" placeholder="Seu nome" required>
-  <input type="email" name="email" placeholder="Seu e-mail" required>
-  <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+<form action="https://formsubmit.co/seu-email@example.com" method="POST">
+    <input type="text" name="nome" placeholder="Nome Completo" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="telefone" placeholder="Telefone" required>
+    
+    <select name="unidade" required>
+        <option value="" disabled selected>Selecione a unidade</option>
+        <option value="Belo Horizonte - Cidade Nova">Belo Horizonte - Cidade Nova</option>
+        <option value="Belo Horizonte - Funcionários">Belo Horizonte - Funcionários</option>
+        <option value="Brasília">Brasília</option>
+        <option value="Chapecó">Chapecó</option>
+        <option value="Florianópolis">Florianópolis</option>
+        <option value="Goiânia">Goiânia</option>
+        <option value="Rio de Janeiro">Rio de Janeiro</option>
+        <option value="Uberlândia">Uberlândia</option>
+        <option value="Vila da Serra">Vila da Serra</option>
+    </select>
 
-  <!-- Extras para personalização -->
-  <input type="hidden" name="_subject" value="Nova matrícula via site!">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://irisjosiely.github.io/landing-page-responsiva/obrigado.html">
+    <textarea name="mensagem" placeholder="Mensagem (opcional)"></textarea>
 
-  <button type="submit">Enviar</button>
+    <!-- Proteção contra spam -->
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- Desativa o captcha padrão -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Redirecionamento após envio -->
+    <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+
+    <button type="submit">Enviar</button>
 </form>
