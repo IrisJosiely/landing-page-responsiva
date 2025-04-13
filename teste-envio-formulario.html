@@ -1,3 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola Logosófico de Educação</title>
+    <!-- Adicionando a fonte Poppins do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Adicionando ícones do Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Matricule-se</h1>
+        <img src="src/institucional.jpg" alt="Escola Exemplo">
+    </header>
+    <nav>
+        <img src="src/logo.png" alt="Logo da Escola">
+        <div class="nav-links" id="nav-links">
+            <a href="#sobre">Sobre a Escola</a>
+            <a href="#matricula">Fazer Matrícula</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+
+    <!-- SEÇÃO SOBRE ATUALIZADA -->
+    <section id="sobre">
+        <div class="sobre-container">
+            <div class="sobre-imagem">
+                <img src="src/crianca-escola.jpg" alt="Criança na escola">
+            </div>
+            
+            <div class="sobre-conteudo">
+                <h2>Desperte o potencial do seu filho na Escola Logosófica de Educação</h2>
+                <p>Com a Pedagogia Logosófica, oferecemos uma educação única que desenvolve o aluno de forma integral – física, mental, moral e espiritualmente.</p>
+                
+                <div class="sobre-lista">
+                    <div class="sobre-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="sobre-item-conteudo">
+                            <h3>Desenvolvimento integral</h3>
+                            <p>Prepare seu filho para os desafios da vida com confiança e resiliência.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sobre-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <div class="sobre-item-conteudo">
+                            <h3>Aprendizado significativo</h3>
+                            <p>Métodos que estimulam o pensamento crítico, a criatividade e a autonomia.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sobre-item">
+                        <i class="fas fa-home"></i>
+                        <div class="sobre-item-conteudo">
+                            <h3>Ambiente acolhedor</h3>
+                            <p>Professores dedicados e um espaço seguro para o crescimento.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sobre-item">
+                        <i class="fas fa-heart"></i>
+                        <div class="sobre-item-conteudo">
+                            <h3>Formação de valores</h3>
+                            <p>Ética, responsabilidade social e respeito à diversidade são pilares da nossa educação.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sobre-chamada">
+                <p>Matricule seu filho na SLE e ofereça a ele uma educação transformadora, que forma cidadãos conscientes, autônomos e felizes.</p>
+                
+                <div class="sobre-botoes">
+                    <a href="#matricula" class="sobre-botao matricule-se">
+                        <i class="fas fa-pencil-alt"></i> Matricule-se
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=SEUNUMERO&amp;text=Sistema%20Logos%C3%B3fico%20de%20Educa%C3%A7%C3%A3o" class="sobre-botao whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O RESTANTE DO HTML PERMANECE EXATAMENTE IGUAL -->
+    <section id="matricula" class="section">
+        <h2>Faça sua Matrícula</h2>
+        <p>Preencha o formulário abaixo para iniciar sua matrícula em nossa escola.</p>
+
 <form id="formulario" action="https://formsubmit.co/irisjosiely@gmail.com" method="POST">
     <input type="text" name="nome" placeholder="Nome Completo" required>
     <input type="email" name="email" placeholder="Email" required>
@@ -58,3 +150,36 @@
         });
     });
 </script>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <img src="src/logo-rodape.png" alt="Logo da Escola">
+           
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="copyright">
+                Copyright @ 2025 Sistema Logosófico de Educação
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VX0PY9LGYV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VX0PY9LGYV');
+</script>
+
+
+    <!-- Whatsapp botão flutuante -->
+    <a href="https://api.whatsapp.com/send?phone=SEUNUMERO&amp;text=Sistema%20Logos%C3%B3fico%20de%20Educa%C3%A7%C3%A3o" class="whatsapp-button" target="_blank" style="position: fixed;  right: 15px; bottom: 15px;">
+        <img src="src/whatsapp-button.png" alt="botão whatsapp">
+    </a>
+</body>
+</html>
