@@ -89,25 +89,68 @@
     <section id="matricula" class="section">
         <h2>Faça sua Matrícula</h2>
         <p>Preencha o formulário abaixo para iniciar sua matrícula em nossa escola.</p>
-        <form>
-            <input type="text" placeholder="Nome Completo" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Telefone" required>
-            <select required>
-                <option value="" disabled selected>Selecione a unidade</option>
-                <option value="Belo Horizonte - Cidade Nova">Belo Horizonte - Cidade Nova</option>
-                <option value="Belo Horizonte - Funcionários">Belo Horizonte - Funcionários</option>
-                <option value="Brasília">Brasília</option>
-                <option value="Chapecó">Chapecó</option>
-                <option value="Florianópolis">Florianópolis</option>
-                <option value="Goiânia">Goiânia</option>
-                <option value="Rio de Janeiro">Rio de Janeiro</option>
-                <option value="Uberlândia">Uberlândia</option>
-                <option value="Vila da Serra">Vila da Serra</option>
-            </select>
-            <textarea placeholder="Mensagem (opcional)"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+<form id="formulario" action="https://formsubmit.co/irisjosiely@gmail.com" method="POST">
+    <input type="text" name="nome" placeholder="Nome Completo" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="tel" name="telefone" placeholder="Telefone" required>
+    
+    <select name="unidade" required>
+        <option value="" disabled selected>Selecione a unidade</option>
+        <option value="Belo Horizonte - Cidade Nova">Belo Horizonte - Cidade Nova</option>
+        <option value="Belo Horizonte - Funcionários">Belo Horizonte - Funcionários</option>
+        <option value="Brasília">Brasília</option>
+        <option value="Chapecó">Chapecó</option>
+        <option value="Florianópolis">Florianópolis</option>
+        <option value="Goiânia">Goiânia</option>
+        <option value="Rio de Janeiro">Rio de Janeiro</option>
+        <option value="Uberlândia">Uberlândia</option>
+        <option value="Vila da Serra">Vila da Serra</option>
+    </select>
+
+    <textarea name="mensagem" placeholder="Mensagem (opcional)"></textarea>
+
+    <!-- Proteção contra spam -->
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- Desativa o captcha padrão -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Evita redirecionamento -->
+    <input type="hidden" name="_next" value="">
+
+    <button type="submit">Enviar</button>
+</form>
+
+<!-- Mensagem de sucesso personalizada -->
+<p id="mensagem-sucesso" style="display: none; color: #dbf5db; font-weight: bold; margin-top: 1em;">
+    ✅ Obrigado! Seu formulário foi enviado com sucesso.<br>
+    Entraremos em contato em breve.
+</p>
+
+<script>
+    document.getElementById('formulario').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const form = this;
+
+        fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                form.reset();
+                document.getElementById('mensagem-sucesso').style.display = 'block';
+            } else {
+                alert("Houve um erro ao enviar o formulário.");
+            }
+        }).catch(error => {
+            alert("Erro ao conectar com o servidor.");
+        });
+    });
+</script>
+
     </section>
     <footer>
         <div class="footer-content">
