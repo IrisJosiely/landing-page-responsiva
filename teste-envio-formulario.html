@@ -1,4 +1,4 @@
-<form action="https://formsubmit.co/irisjosiely@gmail.com" method="POST">
+<form id="formulario" action="https://formsubmit.co/irisjosiely@gmail.com" method="POST">
     <input type="text" name="nome" placeholder="Nome Completo" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="tel" name="telefone" placeholder="Telefone" required>
@@ -24,8 +24,37 @@
     <!-- Desativa o captcha padrão -->
     <input type="hidden" name="_captcha" value="false">
 
-    <!-- Redirecionamento após envio -->
-    <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+    <!-- Evita redirecionamento e permite usar JS -->
+    <input type="hidden" name="_next" value="">
 
     <button type="submit">Enviar</button>
 </form>
+
+<!-- Mensagem de confirmação (inicialmente escondida) -->
+<p id="mensagem-sucesso" style="display: none; color: green; font-weight: bold; margin-top: 1em;">
+    Obrigado! Sua mensagem foi enviada com sucesso.
+</p>
+
+<script>
+    document.getElementById('formulario').addEventListener('submit', function (e) {
+        e.preventDefault(); // impede o envio imediato
+        const form = this;
+        
+        fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                form.reset();
+                document.getElementById('mensagem-sucesso').style.display = 'block';
+            } else {
+                alert("Houve um erro ao enviar o formulário.");
+            }
+        }).catch(error => {
+            alert("Erro ao conectar com o servidor.");
+        });
+    });
+</script>
