@@ -11,14 +11,14 @@ Desenvolver um MVP (Produto Mínimo Viável) de um hotsite que apresente de form
 - Apresentação institucional do Sistema Logosófico de Educação
 - Layout responsivo e acessível
 - Formulário de captação de interessados
-- Integração com formulário externo (ex: Google Forms)
+- Integração com formulário externo 
 - Design limpo, informativo e de fácil navegação
 
 ## 🚀 Tecnologias Utilizadas
 
 - HTML5  
 - CSS3  
-- JavaScript (básico, se aplicável)  
+- JavaScript  
 - Git e GitHub
 
 ## 🔗 Acesse o Hotsite
@@ -31,8 +31,3 @@ Desenvolver um MVP (Produto Mínimo Viável) de um hotsite que apresente de form
    ```bash
    git clone https://github.com/irisjosiely/landing-page-responsiva.git
 
-
-
-
-
-  adiciona README inicial com descrição do projeto
